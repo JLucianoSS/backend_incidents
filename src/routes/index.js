@@ -2,6 +2,7 @@
 const { Router } = require('express');
 const router = Router();
 
+
 /* Importación de controllers */
 const { getMessageHome } = require('../controllers');
 
