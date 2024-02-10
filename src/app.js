@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 
+
 // Configuración del servidor
 const server = express();
 server.name = "API";
