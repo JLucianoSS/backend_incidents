@@ -8,7 +8,7 @@ const port = 3001;
 
 
 /* Establece la conexion con la BD */
-conn.sync({ alter: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   console.log('Database Connected');
   
   // Inicia el servidor

@@ -1,8 +1,13 @@
 
-
+// Importaciones requeridas
 require('dotenv').config();
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 const { Sequelize } = require('sequelize');
+
+// Importaciones de modelos
+const IncidenciaModel = require('../models/Incidencia');
+const UsuarioModel = require('../models/Usuario');
+const TipoIncidenciaModel = require('../models/TipoIncidencia');
 
 
 /* Configuración para la conexion a la bd */
@@ -14,11 +19,25 @@ const sequelize = new Sequelize(
    }
 );
 
+//Ejecutando la creacion de los modelos
+IncidenciaModel(sequelize);
+UsuarioModel(sequelize);
+TipoIncidenciaModel(sequelize);
+
+// Relaciones
+const { Incidencia, Usuario, TipoIncidencia  } = sequelize.models;
+
+Usuario.hasMany(Incidencia, { foreignKey: 'ID_usuario' });
+Incidencia.belongsTo(Usuario, { foreignKey: 'ID_usuario' });
+
+TipoIncidencia.hasMany(Incidencia, { foreignKey: 'ID_tipo' })
+Incidencia.belongsTo( TipoIncidencia, { foreignKey: 'ID_tipo' });
 
 
 
 
 module.exports = {
+    ...sequelize.models,
     conn: sequelize, 
 };
   
