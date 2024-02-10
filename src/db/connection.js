@@ -27,11 +27,11 @@ TipoIncidenciaModel(sequelize);
 // Relaciones
 const { Incidencia, Usuario, TipoIncidencia  } = sequelize.models;
 
-Usuario.hasMany(Incidencia, { foreignKey: 'ID_usuario' });
-Incidencia.belongsTo(Usuario, { foreignKey: 'ID_usuario' });
+Usuario.hasMany(Incidencia, { foreignKey: 'ID_usuario', as:"usuario" });
+Incidencia.belongsTo(Usuario, { foreignKey: 'ID_usuario', as:"usuario" });
 
-TipoIncidencia.hasMany(Incidencia, { foreignKey: 'ID_tipo' })
-Incidencia.belongsTo( TipoIncidencia, { foreignKey: 'ID_tipo' });
+TipoIncidencia.hasMany(Incidencia, { foreignKey: 'ID_tipo',as: 'tipo' })
+Incidencia.belongsTo( TipoIncidencia, { foreignKey: 'ID_tipo', as: 'tipo' });
 
 
 
