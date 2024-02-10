@@ -2,16 +2,38 @@
 const { Router } = require('express');
 const router = Router();
 
-
 /* Importación de controllers */
-const { getMessageHome, getTypesIncidents, createTypesIncidents } = require('../controllers');
+const { 
+    getMessageHome, 
+    getTypesIncidents, 
+    createTypesIncidents, 
+    createUser, 
+    getUserById, 
+    createIncident , 
+    updateIncidentById,
+    getIncidents, 
+    deleteIncidentById
+} = require('../controllers');
 
 
 
-/* Configuración de routers*/
+/* Configuración de rutas*/
 router.get("/", getMessageHome );
-router.get("/tipos-incidencias",  getTypesIncidents);
-router.post("/crear-tipos-incidencias",  createTypesIncidents);
+
+/* CRUD  de incidencias */
+router.post("/incident/create",  createIncident);
+router.patch("/incident/:idIncident", updateIncidentById);
+router.get("/incidents", getIncidents);
+router.delete("/incident/:idIncident",  deleteIncidentById);
+
+/* Gestión de TIPOS de incidencias */
+router.get("/types",  getTypesIncidents);
+router.post("/types/create",  createTypesIncidents);
+
+
+/* Gestión de usuario */
+router.post("/user/create",  createUser);
+router.get("/user/:idUser",  getUserById);
 
 
 module.exports = router;

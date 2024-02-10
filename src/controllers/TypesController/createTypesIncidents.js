@@ -1,6 +1,6 @@
 
 
-const { TipoIncidencia } = require("../db/connection");
+const { TipoIncidencia } = require("../../db/connection");
 
 
 

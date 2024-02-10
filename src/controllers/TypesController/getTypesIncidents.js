@@ -1,7 +1,7 @@
 
 
 // const axios = require('axios');
-const { TipoIncidencia  } = require("../db/connection");
+const { TipoIncidencia  } = require("../../db/connection");
 
 
 const getTypesIncidents = async (req,res) => {
