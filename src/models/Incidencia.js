@@ -20,8 +20,9 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       estado: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM('pendiente', 'en proceso', 'resuelto'),
         allowNull: false,
+        defaultValue: 'pendiente', // Puedes establecer un valor predeterminado si lo deseas
       },
       fecha_reporte: {
         type: DataTypes.DATEONLY,

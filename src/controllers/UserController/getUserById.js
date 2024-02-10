@@ -6,6 +6,8 @@ const getUserById = async (req, res) => {
 
     const { idUser } = req.params;
 
+    //TODO: logica para encontrar el usuario en la bd
+
    
     return res.json({message:' Usuario encontrado',idUser});
   } catch (error) {

@@ -27,8 +27,8 @@ router.get("/incidents", getIncidents);
 router.delete("/incident/:idIncident",  deleteIncidentById);
 
 /* Gestión de TIPOS de incidencias */
-router.get("/types",  getTypesIncidents);
-router.post("/types/create",  createTypesIncidents);
+router.get("/incidents/types",  getTypesIncidents);
+router.post("/incidents/types/create",  createTypesIncidents);
 
 
 /* Gestión de usuario */
