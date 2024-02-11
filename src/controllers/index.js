@@ -8,6 +8,8 @@ const createIncident = require("./IncidentsController/createIncident");
 const updateIncidentById = require("./IncidentsController/updateIncidentById");
 const getIncidents = require("./IncidentsController/getIncidents");
 const deleteIncidentById = require("./IncidentsController/deleteIncidentById");
+const filterIncidents = require("./IncidentsController/filterIncidents");
+const getIncidentByQuery = require("./IncidentsController/getIncidentByQuery");
 
 
 
@@ -20,7 +22,9 @@ module.exports = {
     createIncident,
     updateIncidentById,
     getIncidents,
-    deleteIncidentById
+    deleteIncidentById,
+    filterIncidents,
+    getIncidentByQuery
     
 
 }
