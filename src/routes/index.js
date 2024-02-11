@@ -8,11 +8,13 @@ const {
     getTypesIncidents, 
     createTypesIncidents, 
     createUser, 
-    getUserById, 
+    findUser, 
     createIncident , 
     updateIncidentById,
     getIncidents, 
-    deleteIncidentById
+    deleteIncidentById,
+    filterIncidents,
+    getIncidentByQuery
 } = require('../controllers');
 
 
@@ -25,6 +27,10 @@ router.post("/incident/create",  createIncident);
 router.patch("/incident/:idIncident", updateIncidentById);
 router.get("/incidents", getIncidents);
 router.delete("/incident/:idIncident",  deleteIncidentById);
+router.get("/incidents/filter/:state",  filterIncidents);
+router.get("/incidents/search/",  getIncidentByQuery);
+
+
 
 /* Gestión de TIPOS de incidencias */
 router.get("/incidents/types",  getTypesIncidents);
@@ -33,7 +39,7 @@ router.post("/incidents/types/create",  createTypesIncidents);
 
 /* Gestión de usuario */
 router.post("/user/create",  createUser);
-router.get("/user/:idUser",  getUserById);
+router.post("/user/find",  findUser);
 
 
 module.exports = router;
