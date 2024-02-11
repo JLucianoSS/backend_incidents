@@ -8,7 +8,7 @@ const {
     getTypesIncidents, 
     createTypesIncidents, 
     createUser, 
-    getUserById, 
+    findUser, 
     createIncident , 
     updateIncidentById,
     getIncidents, 
@@ -33,7 +33,7 @@ router.post("/incidents/types/create",  createTypesIncidents);
 
 /* Gestión de usuario */
 router.post("/user/create",  createUser);
-router.get("/user/:idUser",  getUserById);
+router.post("/user/find",  findUser);
 
 
 module.exports = router;

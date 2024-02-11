@@ -3,7 +3,7 @@ const getMessageHome = require("./OtherController/getMessageHome");
 const getTypesIncidents = require("./TypesController/getTypesIncidents");
 const createTypesIncidents = require("./TypesController/createTypesIncidents");
 const createUser = require("./UserController/createUser");
-const getUserById = require("./UserController/getUserById");
+const findUser = require("./UserController/findUser");
 const createIncident = require("./IncidentsController/createIncident");
 const updateIncidentById = require("./IncidentsController/updateIncidentById");
 const getIncidents = require("./IncidentsController/getIncidents");
@@ -16,7 +16,7 @@ module.exports = {
     getTypesIncidents,
     createTypesIncidents,
     createUser,
-    getUserById,
+    findUser,
     createIncident,
     updateIncidentById,
     getIncidents,
